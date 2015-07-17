@@ -14,17 +14,17 @@
 ActiveRecord::Schema.define(version: 20150717020719) do
 
   create_table "comments", force: :cascade do |t|
-    t.integer  "post_id"
-    t.text     "body"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "post_id",    limit: 4
+    t.text     "body",       limit: 65535
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
   end
 
   create_table "posts", force: :cascade do |t|
-    t.string   "title"
-    t.text     "body"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "title",      limit: 255
+    t.text     "body",       limit: 65535
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
   end
 
 end
